@@ -1,0 +1,19 @@
+WEALTH HYBRID V86.41 — RAILWAY DEPLOYMENT CHECKLIST
+
+1. Upload the contents of this folder to the root of your GitHub repository.
+2. In Railway, configure:
+   API_FOOTBALL_KEY = your regenerated API-Football key
+   WEALTH_PASSWORD = your chosen login password
+   SECRET_KEY = a long random secret
+   DATA_DIR = /data
+3. Attach a Railway Volume mounted at /data.
+4. Deploy and inspect the build/runtime logs.
+5. Test /healthz and /api/diagnosis if those routes are enabled in this build.
+6. Check provider status, quota usage, and match counts before relying on live data.
+
+SECURITY: Do not commit API keys or passwords. A key shown in a screenshot should be
+considered exposed and regenerated. API-Football plan coverage and daily quota limits
+apply. Missing matches/history must be shown as unavailable, not fabricated.
+
+LIMITATION: A package build/static test does not establish that live API access or a
+Railway deployment works. Verify both after deployment.
